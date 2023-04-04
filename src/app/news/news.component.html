@@ -1,0 +1,32 @@
+<div style="display:flex; margin-bottom:50px;">
+  <img src="assets/news.jpg" style="width: 40%; height: 40%; border-radius: 30px;"/>
+  <div style="display:flex; flex-direction: column; align-items: end;">
+    <p class="display_card">
+      <span class="page_text">
+        Alberta Medical Association
+      </span>
+      <span style="font-size: 36px">
+        Failing forward
+      </span>
+      <span style="font-size: 28px">
+        Transforming failure into opportunity
+      </span>
+      <span class="page_text">
+        Vincent Vong, MD, MBA, CCFP
+      </span>
+      <span style="margin-top: 15px">
+        Medical residency is a time of new friendships and experiences but also challenges that we only got glimpses of in medical school. With these new opportunities come stress, worry and a fear of disappointment when things go awry. Even a core skill such as an endotracheal intubation presents a huge barrier to learning throughout a physician’s career. These high-acuity but low-occurrence procedures don’t happen very often, and traditional learning models have relied excessively on chance occurrences to learn these core skills. This reliance on chance occurrences is compounded by an abundance of…    
+      </span>
+    </p>
+    <button class="btn" 
+      (mouseover)="btnText='Read More >'" 
+      (mouseout)="btnText='Read More'"
+      (click)="navigate()">
+      {{btnText || 'Read More'}}
+    </button>
+  </div>
+</div>
+
+
+
+

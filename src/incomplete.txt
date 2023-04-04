@@ -1,0 +1,9 @@
+What still needs to be done:
+    - CustomerAdmin - delete org 
+    - CustomerAdmin - update org
+    - CustomerAdmin - view all users in orgs
+    - Possibly VxrAdmin - update orgs
+    - All user-level stuff (update, delete, view their data)
+
+    - Possibly add styling to the org page that lets them see their organization and user level
+Plus testing and documentation

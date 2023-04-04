@@ -1,0 +1,93 @@
+<div class="card" style="border-radius: 50px; background-color: rgba(31, 215, 224, 0.4);">
+  <p style="margin: 40px; font-size: 30px; color: white;">
+    Welcome to the portal.
+  </p>
+</div>
+
+<button class="btn" *ngIf="userlevel == 'NonAdmin'"
+  (mouseover)="viewinformation_btnText='View Profile >'" 
+  (mouseout)="viewinformation_btnText='View Profile'"
+  (click)="route('/user/profile')">
+  {{viewinformation_btnText || 'View Information'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'NonAdmin'"
+  (mouseover)="updateinformation_btnText='Change Password >'" 
+  (mouseout)="updateinformation_btnText='Change Password'"
+  (click)="route('/user/confirm')">
+  {{updateinformation_btnText || 'Change Password'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'NonAdmin'"
+  (mouseover)="vrresults_btnText='VR Results >'" 
+  (mouseout)="vrresults_btnText='VR Results'"
+  (click)="route('/portal')">
+  {{vrresults_btnText || 'VR Results'}}
+</button>
+
+
+
+
+
+<button class="btn" *ngIf="userlevel == 'OrgAdmin'"
+  (mouseover)="deleteorg_btnText='Delete Organization >'" 
+  (mouseout)="deleteorg_btnText='Delete Organization'"
+  (click)="route('/organization/delete')">
+  {{deleteorg_btnText || 'Delete Organization'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'OrgAdmin'"
+  (mouseover)="updateorgs_btnText='Update Organization >'" 
+  (mouseout)="updateorgs_btnText='Update Organization'"
+  (click)="route('/organization/update')">
+  {{updateorgs_btnText || 'Update Organization'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'OrgAdmin'"
+  (mouseover)="adduser_btnText='Invite User >'" 
+  (mouseout)="adduser_btnText='Invite User'"
+  (click)="route('/organization/invite-user')">
+  {{adduser_btnText || 'Invite User'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'OrgAdmin'"
+  (mouseover)="viewuser_btnText='View Users >'" 
+  (mouseout)="viewuser_btnText='View Users'"
+  (click)="route('/organization/view')">
+  {{viewuser_btnText || 'View Users'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'VxrAdmin'"
+  (mouseover)="addorgs_btnText='New Organization >'" 
+  (mouseout)="addorgs_btnText='New Organization'"
+  (click)="route('/organizations/add')">
+  {{addorgs_btnText || 'New Organization'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'VxrAdmin'"
+  (mouseover)="getorgs_btnText='View Organizations >'" 
+  (mouseout)="getorgs_btnText='View Organizations'"
+  (click)="route('/organizations/get')">
+  {{getorgs_btnText || 'View Organizations'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'VxrAdmin'"
+  (mouseover)="deleteorgs_btnText='Delete Organization >'" 
+  (mouseout)="deleteorgs_btnText='Delete Organization'"
+  (click)="route('/organizations/delete')">
+  {{deleteorgs_btnText || 'Delete Organization'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'VxrAdmin'"
+  (mouseover)="updateorgs_btnText='Update Organizations >'" 
+  (mouseout)="updateorgs_btnText='Update Organizations'"
+  (click)="route('/organizations/update')">
+  {{updateorgs_btnText || 'Update Organizations'}}
+</button>
+
+<button class="btn" *ngIf="userlevel == 'VxrAdmin'"
+  (mouseover)="approveorgs_btnText='Approve Organizations >'" 
+  (mouseout)="approveorgs_btnText='Approve Organizations'"
+  (click)="route('/organizations/approve')">
+  {{approveorgs_btnText || 'Approve Organizations'}}
+</button>

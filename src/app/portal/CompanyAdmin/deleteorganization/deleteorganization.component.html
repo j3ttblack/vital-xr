@@ -1,0 +1,17 @@
+<div class="card" style="border-radius: 50px; background-color: rgba(31, 215, 224, 0.4)">
+  <p style="margin: 40px 40px 0px 40px; font-size: 30px; color: white;">
+    Delete your organization.
+  </p>
+  <p style="margin: 0px 40px 40px 40px; font-size: 22px; color: rgba(255, 255, 255, 0.75);">
+    This can be undone by a Vital XR admin.
+  </p>
+</div>
+
+<div style="display: flex; justify-content: flex-end; margin-bottom: 160px;">
+  <button class="btn" type="submit"
+    (mouseover)="btnText='Delete >'" 
+    (mouseout)="btnText='Delete'"
+    (click)="delete()">
+    {{btnText || 'Delete'}}
+  </button>
+</div>

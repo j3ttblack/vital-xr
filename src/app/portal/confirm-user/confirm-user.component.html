@@ -1,0 +1,21 @@
+<div *ngIf="!submit" style="display: flex; flex-direction: column; margin-bottom: 150px;">
+  <form (submit)="onSubmit()" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+    <div style="display: flex;">
+      <input class="input_field" type="text" [(ngModel)]="email" name="email" placeholder="User Email" required>
+      <input class="input_field" type="text" [(ngModel)]="prevPasswd" name="prevPasswd" placeholder="Previous Password" required>
+      <input class="input_field" type="text" [(ngModel)]="newPasswd" name="newPasswd" placeholder="New Password" required>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button class="btn" type="submit"
+        (mouseover)="btnText='Submit >'" 
+        (mouseout)="btnText='Submit'">
+        {{btnText || 'Submit'}}
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="submit" class="submit_text">
+  Organization created. 
+</div>

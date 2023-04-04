@@ -1,0 +1,33 @@
+.display_card {
+  color: rgba(255,255,255,0.75);
+  font-size: 18px; 
+  padding: 30px;
+  display: flex;
+  flex-direction: column; 
+  background-color: rgba(237,226,128,0.09); 
+  border-radius: 30px;
+  margin-left: 20px;
+  line-height: 32px;
+}
+
+.page_text {
+  color: #1fd7e0; 
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.btn {
+  // position: fixed;
+  right: 0;
+  border: 2px solid #1fd7e0;
+  background-color: none;
+  padding: 10px 20px;
+  font-size: 26px;
+  color: #1fd7e0;
+  box-shadow: -5px 5px rgba(0,0,0,0.09);
+  max-width: 200px;
+}
+
+.btn:hover {
+  border-color: transparent;
+}

@@ -1,0 +1,53 @@
+<div>
+  <div *ngIf="!needConfirm && !newLogin" style="display: flex; flex-direction: column; margin-bottom: 150px;">
+    <form (submit)="login_navigation()" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <input class="input_field" type="text" [(ngModel)]="username" name="username" placeholder="Username" required>
+      <input style="margin-top: 30px" class="input_field" type="password" [(ngModel)]="pswd" name="pswd" placeholder="Password" required>
+      <p style="color: red; margin-left: 20px">
+        {{error_message}}
+      </p>
+      <span (click)="onContinueWithGoogle()" class="click_text_display">or Sign-in with Google</span>
+      <span (click)="onNewLogin()" class="text_display">Are you new? Click <a class="click_text_display">here</a> to sign in for the first time.</span>
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn" type="submit"
+          (mouseover)="btnText='Submit >'" 
+          (mouseout)="btnText='Submit'"
+          [disabled]='username == "" || pswd == ""'>
+          {{btnText || 'Submit'}}
+        </button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="needConfirm">
+    <p class="text">Please check your email for your temporary password</p>
+    <div *ngIf="!submit" style="display: flex; flex-direction: column; margin-bottom: 150px;">
+      <form (submit)="onSubmit()" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div style="display: flex;">
+          <input class="input_field" type="password" [(ngModel)]="tempPasswd" name="tempPasswd" placeholder="Your Temporary Password" required>
+          <input class="input_field" type="password" [(ngModel)]="newPasswd" name="newPasswd" placeholder="New Password" required>
+          <p style="color: red; margin-left: 20px">
+            {{error_message}}
+          </p>
+        </div>
+        <div style="display: flex; justify-content: flex-end;">
+          <button class="btn" type="submit"
+            (mouseover)="btnText='Submit >'" 
+            (mouseout)="btnText='Submit'">
+            {{btnText || 'Submit'}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="newLogin">
+    <form (submit)="onNewLoginSubmitted()" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <input class="input_field" type="email" [(ngModel)]="username" name="email" placeholder="Email Address" required>
+      <a (click)="onContinueWithGoogle()" class="click_text_display">Continue with Google</a>
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn" type="submit" (mouseover)="btnText='Submit >'" (mouseout)="btnText='Submit'">
+          {{btnText}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

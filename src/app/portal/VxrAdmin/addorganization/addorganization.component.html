@@ -1,0 +1,21 @@
+<div *ngIf="!submit" style="display: flex; flex-direction: column; margin-bottom: 220px;">
+  <form (submit)="onSubmit()" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+    <div style="display: flex;">
+      <input class="input_field" type="text" [(ngModel)]="orgname" name="orgname" placeholder="Organization Name" required>
+      <input style="margin-left: 30px" class="input_field" type="number" [(ngModel)]="concurrent_users" name="concurrent_users" placeholder="Concurrent Users" required min="1">
+      <input style="margin-left: 30px" class="input_field" type="number" [(ngModel)]="total_users" name="total_users" placeholder="Total Users" required min="1">
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button class="btn" type="submit"
+        (mouseover)="btnText='Submit >'" 
+        (mouseout)="btnText='Submit'">
+        {{btnText || 'Submit'}}
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="submit" class="submit_text">
+  Organization successfully created.
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="!submit" style="display: flex; flex-direction: column; margin-bottom: 150px;">
+  <form (submit)="onSubmit()" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+    <div style="display: flex;">
+      <input class="input_field" type="text" [(ngModel)]="name" name="name" placeholder="Name" required>
+      <input style="margin-left: 30px" class="input_field" type="email" [(ngModel)]="email" name="email" placeholder="Email Address" required>
+    </div>
+    <textarea style="margin-top: 30px; min-height: 200px; max-height: 500px; overflow-y: scroll;" class="input_field" [(ngModel)]="message" name="message" placeholder="Message" required></textarea>
+    <div style="display: flex; justify-content: flex-end;">
+      <button class="btn" type="submit"
+        (mouseover)="btnText='Submit >'" 
+        (mouseout)="btnText='Submit'">
+        {{btnText || 'Submit'}}
+      </button>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="submit" class="submit_text">
+  Thanks for reaching out! We will get back to you shortly.
+</div>

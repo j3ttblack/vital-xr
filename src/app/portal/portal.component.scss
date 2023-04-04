@@ -1,0 +1,15 @@
+.btn {
+  right:0;
+  border: 2px solid #1fd7e0;
+  background-color: none;
+  padding: 10px 20px;
+  font-size: 22px;
+  color: #1fd7e0;
+  box-shadow: -5px 5px rgba(0,0,0,0.09);
+  max-width: 290px;
+  margin: 30px;
+}
+
+.btn:hover {
+  border-color: transparent;
+}

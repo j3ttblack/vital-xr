@@ -1,0 +1,33 @@
+.table_color {
+  // padding: 30px;
+  background-color: rgba(237,226,128,0.09); 
+  border-radius: 30px;
+  margin-left: 20px;
+  margin-bottom: 160px;
+}
+
+.table_cell {
+  color: rgba(255,255,255,0.75);
+  font-size: 18px; 
+  line-height: 32px;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+.text {
+  color: #1fd7e0;
+  font-size: 26px;
+  font-weight: 700px;
+  margin-left: 20px;
+}
+
+.btn {
+  right:0;
+  border: 1px solid #1fd7e0;
+  background-color: none;
+  padding: 5px 10px;
+  color: #1fd7e0;
+  background-color: rgb(100, 100, 100);
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
