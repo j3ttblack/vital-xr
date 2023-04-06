@@ -17,7 +17,7 @@ import { ProjectComponent } from './project/project.component';
 import { SignupFormsComponent } from './signup/signup-forms/signup-forms.component';
 import { SignupComponent } from './signup/signup.component';
 import { DeleteOrganizationsComponent } from './portal/VxrAdmin/deleteorganizations/deleteorganizations.component';
-import { UpdateOrganizationsComponent } from './portal/VxrAdmin/updateorganizations/updateorganization.scomponent';
+import { UpdateOrganizationsComponent } from './portal/VxrAdmin/updateorganizations/updateorganizations.component';
 import { UserProfileComponent } from './portal/user-profile/user-profile.component';
 import { LoginCallback } from './login/callback/login-callback.component';
 

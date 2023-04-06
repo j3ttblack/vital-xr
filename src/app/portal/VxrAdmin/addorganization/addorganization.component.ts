@@ -15,7 +15,7 @@ export class AddOrganizationComponent {
   
   onSubmit() {
     this.orgservice.addOrg(this.orgname, Number(this.concurrent_users), Number(this.total_users), false)
-      .subscribe(e => {
+      .then(e => {
         console.log(e);
       });
     this.submit = true

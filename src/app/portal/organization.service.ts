@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Auth } from 'aws-amplify';
+import { Auth, API } from 'aws-amplify';
 
 @Injectable()
 export class OrganizationService {
-  orgUrl = 'https://0xuxtr2c59.execute-api.us-east-1.amazonaws.com/default/Organizations';
+  orgUrl = 'https://tdsy3cgt61.execute-api.ca-central-1.amazonaws.com/combtest/organizations';
 
   constructor(private http:HttpClient) {}
 
@@ -31,12 +31,20 @@ export class OrganizationService {
       "total_users": total_users,
       "isDeleted": deleted
     }
-    console.log(JSON.stringify(body))
-    return this.http.post<any>(this.orgUrl, JSON.stringify(body))
+
+    const apiName = 'vxr-dev-ag';
+    const path = '/organizations';
+    const init = {
+      response: true,
+      body
+    };
+    console.log(JSON.stringify(body));
+
+    return API.post(apiName, path, init);
   }
 
   getOrgs() {
-    return this.http.get<any>(this.orgUrl)
+    return API.get('vxr-dev-ag', '/organizations', {response: true});
   }
 
   updateOrgField(id, field, new_field) {
@@ -45,13 +53,13 @@ export class OrganizationService {
 
   deleteOrg(id) {
     const params = new HttpParams().set('id', id);  
-    return this.http.delete<any>(this.orgUrl, {params})
+    return API.del('vxr-dev-ag', '/organizations', {params: {id}, response: true});
   }
 
   getOrg(id) {
     console.log(id)
-    const params = new HttpParams().set('id', id);  
-    return this.http.get<any>(this.orgUrl, {params})
+    const params = new HttpParams().set('id', id);
+    return API.get('vxr-dev-ag', '/organizations', {params: {id}, response: true});
   }
 
   updateOrg(id, field, value) {
@@ -60,6 +68,6 @@ export class OrganizationService {
       "value": value
     }
     const params = new HttpParams().set('id', id);  
-    return this.http.patch<any>(this.orgUrl, JSON.stringify(body), {params}).subscribe(e => console.log(e))
+    return API.patch('vxr-dev-ag', '/organizations', {params: {id}, response: true});
   }
 }

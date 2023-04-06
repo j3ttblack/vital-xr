@@ -18,7 +18,8 @@ export class UpdateOrganizationsComponent {
       'Concurrent Users',
       'Max Users'
     ];
-    this.orgService.getOrgs().subscribe(e => {
+    this.orgService.getOrgs().then(e => {
+      e = e.data;
       this.o_data = JSON.parse(JSON.stringify(e))
       for(let i = 0; i < e.length; i++) {
         e[i] = e[i].slice(1, e[i].length-1)

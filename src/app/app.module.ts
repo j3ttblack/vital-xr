@@ -23,7 +23,7 @@ import { DeleteOrganizationComponent } from './portal/CompanyAdmin/deleteorganiz
 import { GetOrganizationComponent } from './portal/VxrAdmin/getorganizations/getorganization.component';
 import { UpdateOrganizationComponent } from './portal/CompanyAdmin/updateorganization/updateorganization.component';
 import { DeleteOrganizationsComponent } from './portal/VxrAdmin/deleteorganizations/deleteorganizations.component';
-import { UpdateOrganizationsComponent } from './portal/VxrAdmin/updateorganizations/updateorganization.scomponent';
+import { UpdateOrganizationsComponent } from './portal/VxrAdmin/updateorganizations/updateorganizations.component';
 import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './portal/user-profile/user-profile.component';
 

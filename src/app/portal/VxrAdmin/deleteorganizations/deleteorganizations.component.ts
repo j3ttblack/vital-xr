@@ -22,7 +22,8 @@ export class DeleteOrganizationsComponent {
       'Active'
     ];
 
-    this.orgService.getOrgs().subscribe(e => {
+    this.orgService.getOrgs().then(e => {
+      e = e.data;
       this.data_unfiltered = JSON.parse(JSON.stringify(e))
       for(let i = 0; i < e.length; i++) {
         e[i] = e[i].slice(1, e[i].length)
@@ -34,7 +35,7 @@ export class DeleteOrganizationsComponent {
   }
 
   delete(row) {
-    this.orgService.deleteOrg(this.data_unfiltered[row][0]).subscribe(e => {console.log(e)})
+    this.orgService.deleteOrg(this.data_unfiltered[row][0]).then(e => {console.log(e)})
     this.router.navigateByUrl("/portal")
   }
 }

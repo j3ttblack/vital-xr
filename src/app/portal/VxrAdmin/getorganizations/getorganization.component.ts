@@ -16,7 +16,8 @@ export class GetOrganizationComponent {
       'Active'
     ];
 
-    this.orgService.getOrgs().subscribe(e => {
+    this.orgService.getOrgs().then(e => {
+      e = e.data;
       for(let i = 0; i < e.length; i++) {
         e[i] = e[i].slice(1, e[i].length)
         e[i][e[i].length-1] = e[i][e[i].length-1] == 0 ? '√' : ''

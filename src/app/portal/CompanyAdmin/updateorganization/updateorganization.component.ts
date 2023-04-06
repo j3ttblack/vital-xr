@@ -16,7 +16,8 @@ export class UpdateOrganizationComponent {
       'Max Users'
     ];
     this.o_org_id = Number(localStorage.getItem('org_id'))
-    this.orgService.getOrg(60).subscribe(e => {
+    this.orgService.getOrg(60).then(e => {
+      e = e.data;
       this.o_orgname = this.orgname = e[0][1]
       this.o_concurrent_users = this.concurrent_users = e[0][2]
       this.o_total_users = this.total_users = e[0][3]

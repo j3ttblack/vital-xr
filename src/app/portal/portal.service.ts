@@ -4,7 +4,7 @@ import { Auth, API } from 'aws-amplify';
 
 @Injectable()
 export class PortalService {
-  addOrgUrl = 'https://0xuxtr2c59.execute-api.us-east-1.amazonaws.com/default/Organizations';
+  addOrgUrl = 'https://tdsy3cgt61.execute-api.ca-central-1.amazonaws.com/combtest/organizations';
   inviteUserUrl = 'https://tdsy3cgt61.execute-api.ca-central-1.amazonaws.com/dev/user';
   confirmUserUrl = 'https://tdsy3cgt61.execute-api.ca-central-1.amazonaws.com/dev/user/confirm';
   newSignOnUrl = 'https://tdsy3cgt61.execute-api.ca-central-1.amazonaws.com/dev/user/first-login';
@@ -19,10 +19,17 @@ export class PortalService {
       "total_users": total_users,
       "isDeleted": deleted
     }
+
+    const apiName = 'vxr-dev-ag';
+    const path = '/organizations';
+    const init = {
+      response: true,
+      body
+    };
     // let header = new HttpHeaders();
     // header = header.append('content-type', 'application/json');
     // return this.http.post(this.URL , body, {headers : header});
-    return this.http.put<any>(this.addOrgUrl,body);
+    return API.put(apiName, path, init);
   }
 
   async inviteUser(email: string) {
