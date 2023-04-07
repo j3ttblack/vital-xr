@@ -8,7 +8,7 @@
   (mouseover)="viewinformation_btnText='View Profile >'" 
   (mouseout)="viewinformation_btnText='View Profile'"
   (click)="route('/user/profile')">
-  {{viewinformation_btnText || 'View Information'}}
+  {{viewinformation_btnText || 'View Profile'}}
 </button>
 
 <button class="btn" *ngIf="userlevel == 'NonAdmin'"
